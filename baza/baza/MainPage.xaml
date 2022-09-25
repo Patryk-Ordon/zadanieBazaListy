@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="baza.MainPage">
+
+    <StackLayout Margin="20,35,20,20">
+        <Entry x:Name="nameEntry" Placeholder="Podaj imię" />
+        <CheckBox x:Name="subscribed" />
+        <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" />
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Name}" FontSize="Medium" />
+                        <Label Text="{Binding Status}" TextColor="Silver" FontSize="Small" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label x:Name="lblO" Text=""/>
+    </StackLayout>
+
+
+</ContentPage>
