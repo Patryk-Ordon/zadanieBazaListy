@@ -48,6 +48,7 @@ namespace baza
                 subscribed.IsChecked = false;
                 //collectionView.ItemsSource = await App.Database.GetPeopleAsync();
 
+                Load();
                 string name = App.Database.GetPeopleAsync().Result[App.Database.GetPeopleAsync().Result.Count-2].Name;
                 lblO.Text = "Ostatnio dodana do bazy osoba to " + name;
 
