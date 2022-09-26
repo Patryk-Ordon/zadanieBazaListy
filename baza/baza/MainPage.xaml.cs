@@ -27,12 +27,13 @@ namespace baza
         }
         // ///
 
-        protected async override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing(); // wymusza odświeżenie kolekcji
             //collectionView.ItemsSource = await App.Database.GetPeopleAsync();
 
             await Load();
+
         }
         async void OnButtonClicked(object sender, EventArgs e)
         {
@@ -47,10 +48,10 @@ namespace baza
                 subscribed.IsChecked = false;
                 //collectionView.ItemsSource = await App.Database.GetPeopleAsync();
 
-                await Load();
                 string name = App.Database.GetPeopleAsync().Result[App.Database.GetPeopleAsync().Result.Count-2].Name;
                 lblO.Text = "Ostatnio dodana do bazy osoba to " + name;
 
+                await Load();
             }
         }
 
@@ -60,5 +61,5 @@ namespace baza
             await App.Database.DeleteAllItems();
             await Load();
         }
-    }
+        }
     }
