@@ -15,6 +15,7 @@ namespace baza
             _database.CreateTableAsync<Person>();
         }
 
+        // ///
         public List<Person> GetPeople()
         {
             List<baza.Person> Person = _database.Table<Person>().ToListAsync().Result;
@@ -30,28 +31,25 @@ namespace baza
             }
             return Person;
         }
+        // ///
 
         public Task<List<Person>> GetPeopleAsync()
         {
+            //return _database.Table<Person>().ToListAsync();
             var result = Task.Run(() => GetPeople());
             return result;
         }
-
-        /*
-        public Task<List<Person>> GetPeopleAsync()
-        {
-            return _database.Table<Person>().ToListAsync();
-        }
-         */
 
         public Task<int> SavePersonAsync(Person person)
         {
             return _database.InsertAsync(person);
         }
 
+        // ///
         public Task DeleteAllItems()
         {
             return _database.DeleteAllAsync<Person>();
         }
+        // ///
     }
 }

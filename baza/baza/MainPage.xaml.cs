@@ -57,10 +57,12 @@ namespace baza
         }
 
         // usuwanie wszystkiego z bazy
+        // ///
         private async void btnClear_Clicked(object sender, EventArgs e)
         {
             await App.Database.DeleteAllItems();
             await Load();
         }
+        // ///
         }
     }
