@@ -18,10 +18,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         <Label x:Name="lblO" Text=""/>
-<<<<<<< HEAD
         <Button x:Name="btnClear" VerticalOptions="End" Text="Wyczyść bazę" Clicked="btnClear_Clicked"/>
-=======
->>>>>>> 545bc2246150baf984d252d436d55b86d30e2e54
     </StackLayout>
 
 
