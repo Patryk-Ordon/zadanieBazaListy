@@ -23,14 +23,14 @@ namespace baza
             {
                 person.Name = char.ToUpper(person.Name[0]).ToString() + person.Name.Substring(1);
             }
-            collectionView.ItemsSource = Person;
+            //collectionView.ItemsSource = Person;
+            lView.ItemsSource = Person;
         }
         // ///
 
         protected override async void OnAppearing()
         {
             base.OnAppearing(); // wymusza odświeżenie kolekcji
-            //collectionView.ItemsSource = await App.Database.GetPeopleAsync();
 
             await Load();
 
@@ -46,7 +46,6 @@ namespace baza
                 });
                 nameEntry.Text = string.Empty;
                 subscribed.IsChecked = false;
-                //collectionView.ItemsSource = await App.Database.GetPeopleAsync();
 
                 await Load();
                 string name = App.Database.GetPeopleAsync().Result[App.Database.GetPeopleAsync().Result.Count-2].Name;

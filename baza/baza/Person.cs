@@ -12,5 +12,10 @@ namespace baza
         public string Name { get; set; }
         public bool Subscribed { get; set; }
         public string Status { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, {1}", Name, Status);
+        }
     }
 }

@@ -7,16 +7,9 @@
         <Entry x:Name="nameEntry" Placeholder="Podaj imię" />
         <CheckBox x:Name="subscribed" />
         <Button Text="Dodaj do bazy" Clicked="OnButtonClicked" />
-        <CollectionView x:Name="collectionView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding Name}" FontSize="Medium" />
-                        <Label Text="{Binding Status}" TextColor="Silver" FontSize="Small" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        
+        <ListView x:Name="lView"/>
+
         <Label x:Name="lblO" Text=""/>
         <Button x:Name="btnClear" VerticalOptions="End" Text="Wyczyść bazę" Clicked="btnClear_Clicked"/>
     </StackLayout>
